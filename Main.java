@@ -16,13 +16,13 @@ public class Main {
                 .build();
 
             // Cria uma solicitacao do tipo GET
-            String apiKey = "APIKEY"
+            String header = "API Access Token";
             HttpRequest request = HttpRequest.newBuilder()
-                .uri(new URI("https://api.themoviedb.org/3/movie/550?api_key=" + apiKey)) /*
-                Uniform Resourse Identifier - identifica unicamente o recurso solicitado. Define o endereço da API do TMDB
-                 que estamos solicitando. Necessida da API Key para autenticação*/
-                .GET() // Define o tipo de solicitação desse builder como GET (padrão). Devolve o builder
-                .build(); // Constrói e devolve um HttpRequest. Devolve um novo HttpRequest
+                .uri(URI.create("https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1"))
+                .header("accept", "application/json")
+                .header("Authorization", "Bearer " + header)
+                .method("GET", HttpRequest.BodyPublishers.noBody())
+                .build();
 
             // Envia a solicitação e receber a resposta de forma síncrona como String
             HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
