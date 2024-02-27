@@ -5,7 +5,7 @@ import java.net.URI;
 import java.util.concurrent.CompletableFuture;
 import java.io.IOException;
 
-public class Main {
+public class Day1 {
 
     public static void main (String[] args){
 
