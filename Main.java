@@ -16,8 +16,9 @@ public class Main {
                 .build();
 
             // Cria uma solicitacao do tipo GET
+            String apiKey = "APIKEY"
             HttpRequest request = HttpRequest.newBuilder()
-                .uri(new URI("https://api.themoviedb.org/3/movie/550?api_key=38531fdef5c36271f43015e364e63ff1")) /*
+                .uri(new URI("https://api.themoviedb.org/3/movie/550?api_key=" + apiKey)) /*
                 Uniform Resourse Identifier - identifica unicamente o recurso solicitado. Define o endereço da API do TMDB
                  que estamos solicitando. Necessida da API Key para autenticação*/
                 .GET() // Define o tipo de solicitação desse builder como GET (padrão). Devolve o builder
