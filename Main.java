@@ -2,7 +2,6 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.net.URI;
-import java.net.URISyntaxException;
 import java.util.concurrent.CompletableFuture;
 import java.io.IOException;
 
@@ -35,7 +34,7 @@ public class Main {
             System.out.println("Resposta: ");
             System.out.println(response.body());
 
-        } catch (URISyntaxException | IOException | InterruptedException e) {
+        } catch (IOException | InterruptedException e) {
             e.printStackTrace();
         }
 
